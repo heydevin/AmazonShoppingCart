@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DocumentObjectModel</title>
+  </head>
+  <body>
+    <button>First Button</button>
+    <button class = 'js-button'>Second Button</button>
+
+    <script>
+      console.log(document.querySelector('button'));
+      document.querySelector('button').innerHTML = 'New Button';
+      document.querySelector('.js-button').innerHTML = 'New Second Button';
+      const buttonElement = document.querySelector('.js-button');
+      console.log(buttonElement);
+      
+      // console.log(document.title);
+      // document.title = 'Changed';
+
+      // console.log(document.body);
+      // console.log(typeof document.body);
+
+      // console.log(document.body.innerHTML);
+      // document.body.innerHTML = 'Changed';
+
+      /*
+      document.body.innerHTML = 'hello';
+      document.title = 'Title';
+      */
+    </script>
+  </body>
+</html>
