@@ -15,13 +15,12 @@ function renderToDoList() {
     const todoObject = ToDoArray[i];
     const { name, dueDate } = todoObject;
     const html = `
-    <p>
-      ${name} ${dueDate}
+      <div>${name}</div>
+      <div>${dueDate}</div>
       <button onclick="
         ToDoArray.splice(${i}, 1);
         renderToDoList();
-      ">Delete</button>
-    </p>
+      " class="delete-button-style" >Delete</button>
     `;
     ToDoHTML = ToDoHTML + html;
   }
