@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Advanced Funtions</title>
+  </head>
+  <body>
+    <script>
+      function greeting() {
+        console.log('hello');
+      }
+      greeting();
+
+      const num = 1;
+      const functionOne = function greeting() {
+        console.log('hello from function 1');
+      }
+
+      console.log(functionOne);
+      console.log(typeof functionOne);
+      functionOne();
+
+      const objectOne = {
+        num: 2,
+        fun: function () {
+          console.log('hello from object 1')
+        }
+      };
+
+      objectOne.fun();
+      
+      function display(param) {
+        console.log(param);
+      }
+
+      display(2);
+
+      function run(param) {
+        param();
+      }
+
+      run(function() {
+        console.log('hello from function inside the parameter');
+      });
+
+      // Asynchronous Code
+      setTimeout(function() {
+        console.log(`time's out`);
+      }, 3000);
+
+      console.log(`This line shows up 3 sec before time's out`);
+
+      setInterval(function() {
+        console.log(`Interval`);
+      }, 3000);
+    </script>
+  </body>
+</html>
