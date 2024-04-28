@@ -52,6 +52,14 @@
       setInterval(function() {
         console.log(`Interval`);
       }, 3000);
+
+      ['Midterm 1', 'Midterm 2', 'Final Exam'].forEach(function(value, index){
+        if (value === 'Midterm 2') {
+          return;
+        }
+        console.log(index);
+        console.log(value);
+      });
     </script>
   </body>
 </html>
