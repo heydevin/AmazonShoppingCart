@@ -16,15 +16,21 @@ function renderToDoList() {
     const html = `
       <div>${name}</div>
       <div>${dueDate}</div>
-      <button onclick="
-        ToDoArray.splice(${index}, 1);
-        renderToDoList();
-      " class="delete-button-style" >Delete</button>
+      <button class="delete-button-style js-delete-todo-button" >Delete</button>
     `;
     ToDoHTML = ToDoHTML + html;
   });
   
   document.querySelector('.js-todo-list').innerHTML = ToDoHTML;
+
+  document.querySelectorAll('.js-delete-todo-button')
+    .forEach((deleteButton, index) => {
+      deleteButton.addEventListener('click', () => {
+        ToDoArray.splice(index, 1);
+        renderToDoList();
+      });
+    });
+
 }
 
 function addToDo() {
@@ -45,3 +51,5 @@ function addToDo() {
 
   renderToDoList();
 }
+
+document.querySelector('.js-add-todo-button').addEventListener('click', () => {addToDo();});
