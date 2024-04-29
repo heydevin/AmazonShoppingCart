@@ -4,7 +4,19 @@
     <title>Advanced Funtions</title>
   </head>
   <body>
+    <button onclick="" class="js-button">Click</button>
     <script>
+      const buttonElement = document.querySelector('.js-button');
+
+      const eventListener = () => {
+        console.log('1');
+      };
+
+      buttonElement.addEventListener('click', eventListener);
+      buttonElement.removeEventListener('click', eventListener);
+      buttonElement.addEventListener('click', () => {console.log('click2');});
+
+
       function greeting() {
         console.log('hello');
       }
@@ -50,7 +62,7 @@
       console.log(`This line shows up 3 sec before time's out`);
 
       setInterval(function() {
-        console.log(`Interval`);
+        // console.log(`Interval`);
       }, 3000);
 
       ['Midterm 1', 'Midterm 2', 'Final Exam'].forEach(function(value, index){
@@ -60,6 +72,42 @@
         console.log(index);
         console.log(value);
       });
+
+      const regularFunction = function(param, param2) {
+        console.log(param);
+      };
+
+      const arrowFunction = (param, param2) => {
+        console.log(param2);
+      };
+
+      const oneParam = param => {
+        console.log(param + 1);
+      };
+      oneParam(2);
+
+      const oneLine = () => 2+3;
+      console.log(oneLine());
+
+      // arrow function with for each loop
+      ['Midterm 1', 'Midterm 2', 'Final Exam'].forEach((value, index) => {
+        if (value === 'Midterm 2') {
+          return;
+        }
+        console.log(index);
+        console.log(value);
+      });
+
+      // Shorthand Method Format
+      const object2 = {
+        method:() => {
+
+        },
+        method() {
+
+        }
+      };
+
     </script>
   </body>
 </html>

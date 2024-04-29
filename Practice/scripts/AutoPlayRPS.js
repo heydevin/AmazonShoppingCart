@@ -79,9 +79,14 @@ function pickComputerMove() {
 let isAutoPlaying = false;
 let intervalID;
 
+// this is the arrow function way comparing to below
+// const autoPlay = () => {
+
+// };
+
 function autoPlay() {
   if(!isAutoPlaying) {
-    intervalID = setInterval(function() {
+    intervalID = setInterval(() => {
       const playerMove = pickComputerMove();
       playGame(playerMove);
     }, 500);
