@@ -8,6 +8,7 @@
     <script>
       const buttonElement = document.querySelector('.js-button');
 
+      
       const eventListener = () => {
         console.log('1');
       };
@@ -108,6 +109,25 @@
         }
       };
 
+      // filter method used to filter value with conditions
+      [1, -3, 5].filter((value, index) => {
+        /*
+        if(value >= 0){
+          return true;}
+        else {
+          return false;
+        }
+        */
+       return value >= 0;
+      });
+      
+      // map is a method that change values in an array with index or all
+      const a = [2,4,6];
+      console.log(a.map((value, index) => {
+        return value + 10;
+      }));
+      // much shorter way of doing the above
+      console.log(a.map(value => value + 20));
     </script>
   </body>
 </html>

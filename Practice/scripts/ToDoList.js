@@ -26,11 +26,14 @@ function renderToDoList() {
   document.querySelectorAll('.js-delete-todo-button')
     .forEach((deleteButton, index) => {
       deleteButton.addEventListener('click', () => {
+        // closure, getting index inside the method or something
+        console.log(index);
         ToDoArray.splice(index, 1);
         renderToDoList();
       });
     });
 
+  
 }
 
 function addToDo() {
