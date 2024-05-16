@@ -61,11 +61,11 @@ export function renderPaymentSummary() {
   document.querySelector('.js-payment-summary')
     .innerHTML = paymentSummaryHTML;
 
-  const checkoutItemHTML = `
-    Checkout (<a class="return-to-home-link"
-      href="amazon.html">${totalItem} items</a>)
-  `;
+  // const checkoutItemHTML = `
+  //   Checkout (<a class="return-to-home-link"
+  //     href="amazon.html">${totalItem} items</a>)
+  // `;
 
-  document.querySelector('.js-checkout-header-middle-section')
-    .innerHTML = checkoutItemHTML;
+  // document.querySelector('.js-checkout-header-middle-section')
+  //   .innerHTML = checkoutItemHTML;
 }
