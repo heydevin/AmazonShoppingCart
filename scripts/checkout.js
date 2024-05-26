@@ -7,18 +7,27 @@ import { loadCart } from "../data/cart.js";
 // makes a function return a promise
 // shortcut for the same code below
 async function loadPage() {
-  console.log('load page');
+  try {
+    // throw 'error 1';
 
-  //await - lets us write asynchronous code like normal code
-  //we can only use await inside async function
-  await loadProductsFetch();
+    //await - lets us write asynchronous code like normal code
+    //we can only use await inside async function
+    await loadProductsFetch();
 
-  // value = value 3
-  const value = await new Promise((resolve) => {
-    loadCart(() => {
-      resolve('value 3');
+    // value = value 3
+    const value = await new Promise((resolve, reject) => {
+      // throw 'error 2';
+      loadCart(() => {
+        // creates a new error
+        // reject('error 3');
+        resolve('value 3');
+      });
     });
-  });
+
+  } catch (error) {
+    console.log('Unexpected error. Please try again later. - ' + error);
+  }
+  
 
   renderOrderSummary();
   renderPaymentSummary();
